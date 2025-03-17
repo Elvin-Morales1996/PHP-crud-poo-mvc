@@ -7,9 +7,9 @@ namespace app\controller;
 
 /*use app\models\viewsModel: este use es para importar 
 el modelo de mi vista y poder utilizarlo en mi controlador */
-use app\models\viewsModel;
+use app\model\viewsModel;
 
-class viewsController {
+class viewsController extends viewsModel{
 
 }
 

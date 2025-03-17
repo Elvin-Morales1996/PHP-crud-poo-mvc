@@ -19,6 +19,12 @@ Si no hay view, define ["login"] como ruta por defecto. */
 <?php require_once "./app/views/inc/head.php"   ?>
 </head>
 <body>
+
 <?php require_once "./app/views/inc/script.php"   ?>
+<script>Swal.fire({
+  title: "The Internet?",
+  text: "That thing is still around?",
+  icon: "question"
+});</script>
 </body>
 </html>

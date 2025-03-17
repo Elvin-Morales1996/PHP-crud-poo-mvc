@@ -5,6 +5,7 @@
     const APP_URL="http://localhost/php-intermedio/PHP-POO-MVC-CRUD-2025/";
 
     //APP_NAME: es el nombre de la aplicacion y lo usaras en los demas archivos html 
+    //
     const APP_NAME="CRUD POO MYSQL MVC";
     //APP_SESSION_NAME:Se usa en session_start() para identificar las sesiones de esta aplicación.
     const APP_SESSION_NAME="CRUD";

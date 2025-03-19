@@ -5,11 +5,12 @@ Si no hay view, define ["login"] como ruta por defecto. */
     require_once "./config/app.php";
     require_once "./autoload.php";
     require_once "./app/views/inc/session_start.php";
-    if (isset($_GET['view'])) {
-        $url= explode("/",$_GET['view']);
+    if(isset($_GET['views'])){
+        $url=explode("/", $_GET['views']);
     }else{
         $url=["login"];
     }
+    
 ?>
 
 
@@ -20,11 +21,27 @@ Si no hay view, define ["login"] como ruta por defecto. */
 </head>
 <body>
 
-<?php require_once "./app/views/inc/script.php"   ?>
-<script>Swal.fire({
-  title: "The Internet?",
-  text: "That thing is still around?",
-  icon: "question"
-});</script>
+<?php
+
+
+    use app\controller\viewsController;
+
+
+
+    $viewsController = new viewsController();
+    $vista = $viewsController->obtenerVistasModel($url[0]);
+    if($vista=="login" || $vista=="404"){
+        require_once "./app/views/content/".$vista."-view.php";
+    } elseif ($vista == "login") {
+        require_once "./app/views/content/login-view.php";
+    } else {
+        require_once $vista; 
+    }
+    
+
+?>
+
+
+
 </body>
 </html>

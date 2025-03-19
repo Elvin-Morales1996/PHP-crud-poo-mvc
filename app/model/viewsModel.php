@@ -20,21 +20,22 @@ protected function obtenerVistasModel($vista){
     //creando un arreglo con las vistas que se van a mostrar.
     $listaBlanca = ["dashboard"];
 
-    if (in_array($vista, $listaBlanca)) {
-        if (is_file("./app/views/content/".$vista."-view.php")) {
-            $contenido = "./app/views/content/".$vista."-view.php";
+  
+    $listaBlanca=["dashboard","userNew","userList","userUpdate","userSearch","userPhoto","logOut"];
+
+    if(in_array($vista, $listaBlanca)){
+        if(is_file("./app/views/content/".$vista."-view.php")){
+            $contenido="./app/views/content/".$vista."-view.php";
         }else{
             $contenido="404";
-        }//else del if mayor
-    }//if
-    elseif($vista=="login" || $vista=="index"){
-            $contenido = "login";
-
-    } //elseif
-    else{
-        $contenido = "404";
-    }//else
+        }
+    }elseif($vista=="login" || $vista=="index"){
+        $contenido="login";
+    }else{
+        $contenido="404";
+    }
     return $contenido;
+    
 }//es la funcion
 }//es de la clase
 

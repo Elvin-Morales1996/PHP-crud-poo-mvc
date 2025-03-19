@@ -19,14 +19,13 @@ class viewsController extends viewsModel{
         /** Si $vista tiene un valor, se llama al método obtenerVistasModel($vista) del modelo viewsModel 
          * para obtener la vista correspondiente.
          * "$this->obtenerVistasModel($vista)" usa el método del modelo porque esta clase hereda de viewsModel*/
-        if ($vista!="") {
-            $respuesta = $this->obtenerVistasModel($vista);
-            /**Si $vista es una cadena vacía (""), se asigna "login" como vista por defecto.
-    Esto significa que si el usuario no ingresa ninguna vista en la URL, será redirigido a "login". */
+	/*---------- Controlador obtener vistas ----------*/
+ 
+        if($vista!=""){
+            $respuesta=parent::obtenerVistasModel($vista);
         }else{
             $respuesta="login";
         }
-        //Devuelve la vista obtenida para que el sistema la cargue.
         return $respuesta;
     }
 

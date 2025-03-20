@@ -35,9 +35,10 @@ Si no hay view, define ["login"] como ruta por defecto. */
     } elseif ($vista == "login") {
         require_once "./app/views/content/login-view.php";
     } else {
+        require_once "./app/views/inc/navbar.php";
         require_once $vista; 
     }
-    
+    require_once "./app/views/inc/script.php"; 
 
 ?>
 

@@ -5,8 +5,8 @@
 <title><?php echo APP_NAME ?></title>
 
 <!--estilos de css framework bulma-->
-<link rel="stylesheet" href="<?php echo  APP_URL; ?>app/views/css/estilos.css">
-<link rel="stylesheet" href="<?php echo APP_URL; ?>app/views/css/bulma.min.css">
+<link rel="stylesheet" href="<?php echo  APP_URL; ?>app/views/CSS/estilos.css">
+<link rel="stylesheet" href="<?php echo APP_URL; ?>app/views/CSS/bulma.min.css">
 
 <!--PLUGIN SweetAlert2 me permite mostrar alertas personalizadas-->
 <link rel="stylesheet" href="<?php echo  APP_URL; ?>app/views/css/sweetalert2.min.css">

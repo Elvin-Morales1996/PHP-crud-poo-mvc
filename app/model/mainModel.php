@@ -29,8 +29,14 @@ class mainModel {
 
 }
 
-
+//funcion protegidda que solo puede usarse en la misma clase o herencia
+//funcion para hacer consulta a la base de datos recibe parametro de la consulta
+//consulta seria ejemplo: SELECT, INSERT, UPDATE, DELETE
+protected function ejecutarConsulta($consulta){
+    $sql = $this->conectar()->prepare($consulta);
+    $sql->execute();
+    return $sql;
 }
 
-
+}
 ?>

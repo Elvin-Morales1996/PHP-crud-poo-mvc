@@ -38,5 +38,32 @@ protected function ejecutarConsulta($consulta){
     return $sql;
 }
 
+//funcion publica para evitar inyeccion sql
+//recibe como parametro un string 
+public function limpiar_Cadena($cadena){
+    //creo un arreglo donde pongo las posibles inyecciones
+    //se puede agregar mas si yo quiero
+    $palabras=["<script>","</script>","<script src","<script type=",
+    "SELECT * FROM","SELECT "," SELECT ","DELETE FROM","INSERT INTO","DROP TABLE",
+    "DROP DATABASE","TRUNCATE TABLE","SHOW TABLES",
+    "SHOW DATABASES","<?php","?>","--","^","<",">","==","=",";","::"];
+
+    $cadena = trim($cadena);
+    $cadena = stripslashes($cadena);
+
+    foreach ($palabras as $palabra) {
+        $cadena = str_ireplace($palabra,"",$cadena);
+    }
+    $cadena = trim($cadena);
+    $cadena = stripslashes($cadena);
+
+    return $cadena;
+
+}
+
+
+
+
+
 }
 ?>
